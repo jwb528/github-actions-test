@@ -16,7 +16,7 @@ jobs:
       - name: config_env
         run: |
           sudo apt-get install pandoc
-        #wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
+          wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
         #tlmgr install unicode-math filehook xecjk xltxtra realscripts fancyhdr lastpage ctex ms cjk ulem environ trimspaces zhnumber collection-fontsrecommended
       - name: md2pdf
         run: |
