@@ -13,9 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: step1
+      - name: config_env
         run: |
-          touch 1.md
+          sudo apt-get install pandoc
+          wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
+          tlmgr install unicode-math filehook xecjk xltxtra realscripts fancyhdr lastpage ctex ms cjk ulem environ trimspaces zhnumber collection-fontsrecommended
+      - name: md2pdf
+        run: |
+          pandoc 1.md -o 1.pdf --pdf-engine=xelatex -V mainfont='PingFang SC' --template=template.tex
       - name: commit
         run: |
           git config --global user.email 2066729323@qq.com
