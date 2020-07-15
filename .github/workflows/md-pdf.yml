@@ -21,7 +21,7 @@ jobs:
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
       - name: test PATH
         run: |
-          cd $PATH/bin
+          cd $HOME/bin
           ls
           echo $PATH
           cd -
