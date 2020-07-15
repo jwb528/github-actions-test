@@ -20,7 +20,11 @@ jobs:
           wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
       - name: test PATH
-        run: cat ~/.bashrc
+        run: |
+          cd $PATH/bin
+          ls
+          echo $PATH
+          cd -
       - name: config_tex_packages
         run: tlmgr install unicode-math filehook xecjk xltxtra realscripts fancyhdr lastpage ctex ms cjk ulem environ trimspaces zhnumber collection-fontsrecommended
       - name: md2pdf
