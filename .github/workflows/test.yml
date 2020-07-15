@@ -18,7 +18,7 @@ jobs:
       - name: edit_bashrc
         run: |
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
-          sudo source ~/.bashrc 
+          source ~/.bashrc 
           cat ~/.bashrc
           echo $PATH
       - name: test_PATH
