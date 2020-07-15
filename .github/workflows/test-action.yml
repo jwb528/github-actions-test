@@ -17,6 +17,6 @@ jobs:
     - name: step1
       run: |
         touch 1.md
-        git add .
-        git commit -am "1"
+#git add .
+#git commit -am "1"
     
