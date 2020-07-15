@@ -15,9 +15,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: step1
         run: |
-          git init
-          git remote add origin https://github.com/jwb528/github-actions-test.git
           touch 1.md
+      - name: commit
+        run: |
+          git config --global user.email 2066729323@qq.com
+          git config --global user.name github_actions
           git add .
-          git commit -am "1"
-          git push origin
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
