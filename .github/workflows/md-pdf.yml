@@ -18,12 +18,12 @@ jobs:
           sudo apt-get install pandoc
           wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
-        #tlmgr install unicode-math filehook xecjk xltxtra realscripts fancyhdr lastpage ctex ms cjk ulem environ trimspaces zhnumber collection-fontsrecommended
+          tlmgr install unicode-math filehook xecjk xltxtra realscripts fancyhdr lastpage ctex ms cjk ulem environ trimspaces zhnumber collection-fontsrecommended
       - name: md2pdf
         run: |
           echo "123">>1.md
           pandoc --version
-        #pandoc 1.md -o 1.pdf --pdf-engine=xelatex -V mainfont='PingFang SC' --template=template.tex
+          pandoc 1.md -o 1.pdf --pdf-engine=xelatex -V mainfont='PingFang SC' --template=template.tex
       - name: commit
         run: |
           git config --global user.email 2066729323@qq.com
