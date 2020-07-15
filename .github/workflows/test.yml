@@ -20,7 +20,7 @@ jobs:
           echo "export PATH=$PATH:$HOME/bin">>~/.edit_bashrc
           echo $PATH
       - name: test_PATH
-          run: echo $PATH
+        run: echo $PATH
       - name: commit
         run: |
           git config --global user.email 2066729323@qq.com
