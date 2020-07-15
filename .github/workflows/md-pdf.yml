@@ -19,6 +19,7 @@ jobs:
         run: |
           wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
+          source ~/.bashrc
       - name: test PATH
         run: |
           echo $PATH
