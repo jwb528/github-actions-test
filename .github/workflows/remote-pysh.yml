@@ -16,6 +16,8 @@ jobs:
       - name: step1
         run: |
           git init
+          git remote add origin https://github.com/jwb528/github-actions-test.git
           touch 1.md
           git add .
           git commit -am "1"
+          git push origin
