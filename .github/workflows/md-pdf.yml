@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: test PATH
+        run: |
+          echo $PATH
       - name: config_pandoc
         run: sudo apt-get install pandoc
       - name: config_tinytex
@@ -20,6 +23,7 @@ jobs:
           wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
           sudo echo "export PATH=$PATH:$HOME/bin">>~/.bashrc
           source ~/.bashrc
+          export PATH=$PATH:$HOME/bin
       - name: test PATH
         run: |
           echo $PATH
